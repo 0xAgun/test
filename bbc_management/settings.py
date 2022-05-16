@@ -121,29 +121,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-if DEBUG:
-    STATIC_URL = '/static/'
-    MEDIA_URL = '/images/'
-    STATICFILES_DIRS=[
-         os.path.join(BASE_DIR,'static')
-    ]
-    STATIC_ROOT='/home/agun/Documents/django/bbc/bbc_management/static'
-    MEDIA_ROOT='/home/agun/Documents/django/bbc/bbc_management/images'
-else:
-    STATIC_URL = '/static/'
-    MEDIA_URL='images/'
-    STATIC_ROOT=os.path.join(BASE_DIR,'static')
-    MEDIA_ROOT=os.path.join(BASE_DIR,'images/')
+# if DEBUG:
+#     STATIC_URL = '/static/'
+#     MEDIA_URL = '/images/'
+#     STATICFILES_DIRS=[
+#          os.path.join(BASE_DIR,'static')
+#     ]
+#     STATIC_ROOT='/home/agun/Documents/django/bbc/bbc_management/static'
+#     MEDIA_ROOT='/home/agun/Documents/django/bbc/bbc_management/images'
+# else:
+#     STATIC_URL = '/static/'
+#     MEDIA_URL='images/'
+#     STATIC_ROOT=os.path.join(BASE_DIR,'static')
+#     MEDIA_ROOT=os.path.join(BASE_DIR,'images/')
 
 
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/home/agun/Documents/django/bbc/bbc_management/images/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/home/agun/Documents/django/bbc/bbc_management/images/'
 
-# STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static/')
-# ]
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static/')
+]
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
