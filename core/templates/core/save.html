@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="col-md-8">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>{{message}}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <h3>fklds</h3>
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}<br>
+        <!-- <label>images</label> -->
+        <!-- <input type="file" name="images" multiple> -->
+        <button type="submit" onClick="refreshPage()">submit</button>
+    </form>
+    <script>
+        function refreshPage(){
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+to do 
+
+- add a duplicate option
+
+- show users report on their profile
+
+- interct admin with users
