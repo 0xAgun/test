@@ -39,10 +39,12 @@ def request_logout(request):
 @login_required(login_url='login')
 def profile(request):
     gg = Userreports.objects.filter(admin_approved=True, user= request.user)
+    approv = Userreports.objects.filter(user= request.user)
     sum = 0
     for x in gg:
         sum += x.get_points()
-    context = {"user_poiint": sum}
+    print(approv)
+    context = {"user_poiint": sum, "approves": approv}
     return render(request, 'core/profile.html', context)
 
 def logins(request):

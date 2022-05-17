@@ -71,8 +71,10 @@
 					class="color-b circule"> <i class="fab fa-dribbble fa-2x"></i></button><br>
 				<h2 class="title">{{user_poiint}}</h2>
 				<div class=" px-2 rounded mt-4 date "> <span class="join">Points</span> </div></br>
-				
-				<div class="text mt-3"> <span> Artist/ Creative Director by Day #NFT minting@ with FND night. </span> </div>
+				<div class="text mt-3"> <span> All Reports </span> </div>
+			{% for reports in approves %}
+				<div class="text mt-3"> <span> {{reports}} </span> </div>
+			{% endfor %}
 				<div class=" d-flex mt-2"> <button class="btn1 btn-dark" onclick="window.location.href='http://127.0.0.1:8000/logout'">Logout</button> </div>
 			</div>
 		</div>

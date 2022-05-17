@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!_7u#gg#r2$ovc3ld(rvm*s(%e3h3b6yhhhwf60566d1s&#=+3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'bbcsbd.herokuapp.com']
 
@@ -47,6 +47,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -117,34 +118,35 @@ USE_I18N = True
 
 USE_TZ = True
 
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-# if DEBUG:
-#     STATIC_URL = '/static/'
-#     MEDIA_URL = '/images/'
-#     STATICFILES_DIRS=[
-#          os.path.join(BASE_DIR,'static')
-#     ]
-#     STATIC_ROOT='/home/agun/Documents/django/bbc/bbc_management/static'
-#     MEDIA_ROOT='/home/agun/Documents/django/bbc/bbc_management/images'
-# else:
-#     STATIC_URL = '/static/'
-#     MEDIA_URL='images/'
-#     STATIC_ROOT=os.path.join(BASE_DIR,'static')
-#     MEDIA_ROOT=os.path.join(BASE_DIR,'images/')
 
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/home/agun/Documents/django/bbc/bbc_management/images/'
 
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static/')
-]
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+if DEBUG:
+
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+else:
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/images/'
+
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static/')
+# ]
+
+
+# MEDIA_ROOT = '/home/agun/Documents/django/bbc/bbc_management/static/images'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
