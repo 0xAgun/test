@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	background-color: #1A0933;
+}
+
+/* .navbar {
+	padding: 1rem;
+} */
+.navbar {
+	margin:0 !important;
+	padding: 1rem !important;
+}
+
+.navbar .navbar-nav .nav-item{
+	padding-right: 1rem;
+}
+
+
+.navbar .navbar-nav .nav-item a{
+	font-family: 'Josefin Sans', sans-serif;
+}
+.navbar .navbar-nav button{
+	background-color: cyan;
+}
+
+.navbar .navbar-nav .nav-item a:hover{
+	font-family: 'Josefin Sans', sans-serif;
+	color: cyan;
+}
+
+button.btn:nth-child(n){
+	border-color: cyan;
+	color: cyan;
+}
+button.btn:nth-child(n):hover{
+	background-color: cyan;
+	color: black;
+}
+
+.front-caption .text{
+	color: blanchedalmond;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+.front-caption .text .h2, h2 {
+	font-size: 4rem;
+}
+.text > h2:nth-child(1){
+	font-size: 4rem;
+}
+
+.img-fluid{
+	max-width: 70%;
+	height: auto;
+}
+
+.text > button:nth-child(2){
+	margin-left: 1rem;
+}
+.navbar-brand .a .img{
+	height: 20px;
+}
+
+.textarea .h1, h1 {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.card {
+	z-index: 1;
+	overflow: hidden;
+	transition: 0.5s;
+}
+.card:hover {
+	color: white;
+}
+.card::before {
+	content: "";
+	position: absolute;
+	left: -100%;
+	top: 0%;
+	background: #474af0;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	z-index: -1;
+}
+.card:hover::before {
+	left: 0%;
+	color: white;
+}
+.container-fluid {
+	background-image: url("blob-scene-haikei.svg");
+	background-position: center;
+	background-size: cover;
+}

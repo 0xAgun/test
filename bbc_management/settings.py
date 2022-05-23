@@ -25,7 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!_7u#gg#r2$ovc3ld(rvm*s(%e3h3b6yhhhwf60566d1s&#=+3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000"]
 
 ALLOWED_HOSTS = ['127.0.0.1', 'bbcsbd.herokuapp.com']
 
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'bbcsbd.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'notifications',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -44,6 +47,8 @@ INSTALLED_APPS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DJANGO_NOTIFICATIONS_CONFIG = { 'USE_JSONFIELD': True}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,17 +141,6 @@ else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/images/'
-
-# STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static/')
-# ]
-
-
-# MEDIA_ROOT = '/home/agun/Documents/django/bbc/bbc_management/static/images'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

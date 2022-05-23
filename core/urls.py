@@ -18,6 +18,7 @@ urlpatterns = [
     path('leaderboard/', views.leaderboard, name="leaderboard"),
     path('view_reports/', views.view_reports, name="view_reports"),
     path('view_reports/<int:pk>', views.detail_view, name="detail_reports"),
+    path('my_reports/<int:pk>', views.detail_view_user, name="my_reports"),
     path('validate/', views.veri, name="val"),
 
 ]

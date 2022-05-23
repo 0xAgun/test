@@ -58,6 +58,14 @@ class Images(models.Model):
     def __str__(self):
         return self.reports.title + "'s image"
 
+class Comments(models.Model):
+    reports = models.ForeignKey(Userreports, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField(null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.reports.title
 
                     
 

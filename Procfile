@@ -1,1 +1,0 @@
-web: gunicorn bbc_management.wsgi
